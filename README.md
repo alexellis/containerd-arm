@@ -16,7 +16,8 @@ You may need to install pre-reqs using `apt`:
 sudo apt update \
   && sudo apt install -qy \
     runc \
-    bridge-utils
+    bridge-utils \
+    libbtrfs-dev btrfs-tools
 ```
 
 Then run:
@@ -27,3 +28,9 @@ curl -sSL https://github.com/alexellis/containerd-armhf/releases/download/v1.3.5
 ```
 
 Fortunately CNI is available for multiple architectures. See [the faasd instructions](https://github.com/openfaas/faasd/blob/master/docs/DEV.md) for how to install CNI for armhf
+
+## Building your own binaries
+
+If you want to build from source, install the pre-reqs from above, along with Go 1.13 or later.
+
+See also [BUILDING.md](https://github.com/containerd/containerd/blob/master/BUILDING.md#build-containerd)
