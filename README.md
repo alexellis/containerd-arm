@@ -10,6 +10,8 @@ These binaries are consumed by users of faasd, you can find instructions to [ins
 
 ## Installation
 
+Check that you are running on an armhf / armv7l machine with `uname -a`, then:
+
 You may need to install pre-reqs using `apt`:
 
 ```bash
@@ -23,8 +25,8 @@ sudo apt update \
 Then run:
 
 ```bash
-curl -sSL https://github.com/alexellis/containerd-armhf/releases/download/v1.3.5/containerd.tgz | \
-  sudo tar -xvz --strip-components=2 -C /usr/local/bin/
+curl -sSL https://github.com/alexellis/containerd-armhf/releases/download/v1.3.5/containerd-1.3.5-linux-armhf.tar.gz | \
+  sudo tar -xvz --strip-components=1 -C /usr/local/bin/
 ```
 
 Fortunately CNI is available for multiple architectures. See [the faasd instructions](https://github.com/openfaas/faasd/blob/master/docs/DEV.md) for how to install CNI for armhf
