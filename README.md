@@ -26,7 +26,7 @@ Then run:
 
 ```bash
 curl -sSL https://github.com/alexellis/containerd-armhf/releases/download/v1.3.5/containerd-1.3.5-linux-armhf.tar.gz | \
-  sudo tar -xvz --strip-components=1 -C /usr/local/bin/
+  sudo tar -xvf --strip-components=1 -C /usr/local/bin/
 ```
 
 Fortunately CNI is available for multiple architectures. See [the faasd instructions](https://github.com/openfaas/faasd/blob/master/docs/DEV.md) for how to install CNI for armhf
@@ -36,3 +36,13 @@ Fortunately CNI is available for multiple architectures. See [the faasd instruct
 If you want to build from source, install the pre-reqs from above, along with Go 1.13 or later.
 
 See also [BUILDING.md](https://github.com/containerd/containerd/blob/master/BUILDING.md#build-containerd)
+
+```bash
+cd $HOME/go/src/github.com/containerd/containerd
+make
+
+cd bin/
+tar -czf containerd-1.3.5-linux-armhf.tar.gz ./
+cp *.tar.gz ~/
+```
+
