@@ -21,6 +21,8 @@ You may need to install pre-reqs using `apt`:
 ```bash
 sudo apt update \
   && sudo apt install -qy \
+    git \
+    build-essential \
     runc \
     bridge-utils \
     libbtrfs-dev btrfs-tools
