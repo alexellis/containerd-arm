@@ -26,6 +26,8 @@ sudo apt update \
     libbtrfs-dev btrfs-tools
 ```
 
+On some versions of Ubuntu, you may need `btrfs-progs` instead.
+
 On Ubuntu Bionic I was unable to find the `libbtrfs-dev` package.
 
 Fortunately CNI is available for multiple architectures. See [the faasd instructions](https://github.com/openfaas/faasd/blob/master/docs/DEV.md) for how to install CNI for armhf
