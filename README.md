@@ -59,22 +59,36 @@ If you want to build from source, install the pre-reqs from above, along with Go
 See also [BUILDING.md](https://github.com/containerd/containerd/blob/master/BUILDING.md#build-containerd)
 
 ```bash
-cd $HOME/go/src/github.com/containerd/containerd
-make
+curl -sLS https://get.arkade.dev | sudo sh \
+  && sudo arkade system install go
+
+sudo apt install -qy btrfs-tools
+```
+
+```bash
+sudo apt update && sudo apt install -qy git tmux
+```
+
+```bash
+mkdir -p $HOME/go/src/github.com/containerd/
+cd $HOME/go/src/github.com/containerd/
+git clone https://github.com/containerd/containerd
+
+cd containerd
+
+export VER="1.6.4"
+
+git checkout $VER
+tmux
+
+export PATH=$PATH:/usr/local/go/bin/
+export GOPATH=$HOME/go
+time make
 ```
 
 Then extract the binaries, for the releases page:
 
 ```bash
 cd bin/
-tar -czf containerd-1.3.5-linux-armhf.tar.gz ./
-cp *.tar.gz ~/
-```
-
-Or
-
-```bash
-cd bin/
-tar -czf containerd-1.3.5-linux-arm64.tar.gz ./
-cp *.tar.gz ~/
+tar -czf $HOME/containerd-$VER-linux-armhf.tar.gz ./
 ```
