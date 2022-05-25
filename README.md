@@ -22,6 +22,7 @@ You may need to install pre-reqs using `apt`:
 sudo apt update \
   && sudo apt install -qy \
     git \
+    tmux \
     build-essential \
     runc \
     bridge-utils \
@@ -61,13 +62,9 @@ See also [BUILDING.md](https://github.com/containerd/containerd/blob/master/BUIL
 ```bash
 curl -sLS https://get.arkade.dev | sudo sh \
   && sudo arkade system install go
-
-sudo apt install -qy btrfs-tools
 ```
 
-```bash
-sudo apt update && sudo apt install -qy git tmux
-```
+Make sure that you've installed the pre-reqs from the "Installation" section.
 
 ```bash
 mkdir -p $HOME/go/src/github.com/containerd/
@@ -85,6 +82,8 @@ export PATH=$PATH:/usr/local/go/bin/
 export GOPATH=$HOME/go
 time make
 ```
+
+If you run into an error, check the pre-reqs are present from the top of the README file.
 
 Then extract the binaries, for the releases page:
 
