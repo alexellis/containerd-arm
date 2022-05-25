@@ -88,6 +88,9 @@ If you run into an error, check the pre-reqs are present from the top of the REA
 Then extract the binaries, for the releases page:
 
 ```bash
-cd bin/
-tar -czf $HOME/containerd-$VER-linux-armhf.tar.gz ./
+export VER="1.6.4"
+
+cd bin/ \
+ && tar -czvf $HOME/containerd-$VER-linux-armhf.tar.gz ./
+
 ```
